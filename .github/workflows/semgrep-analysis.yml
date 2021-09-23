@@ -25,8 +25,9 @@ jobs:
       # Scan code using project's configuration on https://semgrep.dev/manage
       - uses: returntocorp/semgrep-action@v1
         with:
-          p/security-audit
-          p/secrets
+          config: >- # more at semgrep.dev/explore
+            p/security-audit
+            p/secrets
           generateSarif: "1"
 
       # Upload SARIF file generated in previous step
